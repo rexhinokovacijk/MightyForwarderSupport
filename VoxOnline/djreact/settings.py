@@ -3,7 +3,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 DEBUG = True
-ALLOWED_HOSTS = ['voxonline.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['voxonline.herokuapp.com', 'http://127.0.0.1/', 'http://127.0.0.1:8000/', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -83,7 +83,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SITE_ID = 1
 
@@ -96,7 +96,7 @@ REST_FRAMEWORK = {
     ),
 }
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
+    'https://localhost:3000',
 )
 
 CSRF_COOKIE_NAME = "csrftoken"
